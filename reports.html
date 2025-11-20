@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Reports – E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Business Intelligence & Data Mining</h1>
+</header>
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+</div>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Sales Analytics</h3>
+        <button onclick="generateReport('sales')">Generate Report</button>
+        <div id="report-sales" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>Customer Segmentation</h3>
+        <button onclick="generateReport('segmentation')">Segment Customers</button>
+        <div id="report-segmentation" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>Association Rules</h3>
+        <button onclick="generateReport('association')">Find Patterns</button>
+        <div id="report-association" class="result"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

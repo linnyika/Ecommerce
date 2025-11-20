@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛒 E-Commerce Management System</h1>
+            <p>Advanced Database Systems Project - Interactive MongoDB & MySQL Demonstration</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('mongodb')">MongoDB (NoSQL)</button>
+            <button class="tab-button" onclick="showTab('mysql')">MySQL (Relational)</button>
+            <button class="tab-button" onclick="showTab('reports')">Business Reports</button>
+            <button class="tab-button" onclick="showTab('interactive')">🎮 Interactive Demo</button>
+        </div>
+
+        <!-- MONGODB TAB -->
+        <div id="mongodb" class="tab-content active">
+            <h2>📄 MongoDB Database Operations</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📊 Database Summary</h3>
+                    <p>Show total users, products, orders and payments</p>
+                    <button onclick="loadMongoDBData('summary')">Load Summary</button>
+                    <div id="mongo-summary" class="result"></div>
+                </div>
+
+                <div class="card">
+                    <h3>💰 Sales Report</h3>
+                    <p>Total revenue, orders and average order value</p>
+                    <button onclick="loadMongoDBData('sales-report')">Generate Report</button>
+                    <div id="mongo-sales" class="result"></div>
+                </div>
+
+                <div class="card">
+                    <h3>🏆 Top Products</h3>
+                    <p>Best selling products by quantity and revenue</p>
+                    <button onclick="loadMongoDBData('top-products')">Show Top Products</button>
+                    <div id="mongo-products" class="result"></div>
+                </div>
+
+                <div class="card">
+                    <h3>👥 Customer Analytics</h3>
+                    <p>Customer spending patterns and order history</p>
+                    <button onclick="loadMongoDBData('customer-summary')">View Customers</button>
+                    <div id="mongo-customers" class="result"></div>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Inventory Alerts</h3>
+                    <p>Products with low stock levels</p>
+                    <button onclick="loadMongoDBData('low-stock')">Check Inventory</button>
+                    <div id="mongo-inventory" class="result"></div>
+                </div>
+            </div>
+        </div>
+            <script src="script.js"></script>
+</body>
+</html>

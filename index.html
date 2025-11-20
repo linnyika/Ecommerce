@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🛒 E-Commerce Management System</h1>
+            <h1>E-Commerce Management System</h1>
             <p>Advanced Database Systems Project - Interactive MongoDB & MySQL Demonstration</p>
         </header>
 
@@ -17,44 +17,44 @@
             <button class="tab-button active" onclick="showTab('mongodb')">MongoDB (NoSQL)</button>
             <button class="tab-button" onclick="showTab('mysql')">MySQL (Relational)</button>
             <button class="tab-button" onclick="showTab('reports')">Business Reports</button>
-            <button class="tab-button" onclick="showTab('interactive')">🎮 Interactive Demo</button>
+            <button class="tab-button" onclick="showTab('interactive')">Interactive Demo</button>
         </div>
 
         <!-- MONGODB TAB -->
         <div id="mongodb" class="tab-content active">
-            <h2>📄 MongoDB Database Operations</h2>
+            <h2>MongoDB Database Operations</h2>
             
             <div class="card-grid">
                 <div class="card">
-                    <h3>📊 Database Summary</h3>
+                    <h3>Database Summary</h3>
                     <p>Show total users, products, orders and payments</p>
                     <button onclick="loadMongoDBData('summary')">Load Summary</button>
                     <div id="mongo-summary" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>💰 Sales Report</h3>
+                    <h3>Sales Report</h3>
                     <p>Total revenue, orders and average order value</p>
                     <button onclick="loadMongoDBData('sales-report')">Generate Report</button>
                     <div id="mongo-sales" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>🏆 Top Products</h3>
+                    <h3>Top Products</h3>
                     <p>Best selling products by quantity and revenue</p>
                     <button onclick="loadMongoDBData('top-products')">Show Top Products</button>
                     <div id="mongo-products" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>👥 Customer Analytics</h3>
+                    <h3>Customer Analytics</h3>
                     <p>Customer spending patterns and order history</p>
                     <button onclick="loadMongoDBData('customer-summary')">View Customers</button>
                     <div id="mongo-customers" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>📦 Inventory Alerts</h3>
+                    <h3>Inventory Alerts</h3>
                     <p>Products with low stock levels</p>
                     <button onclick="loadMongoDBData('low-stock')">Check Inventory</button>
                     <div id="mongo-inventory" class="result"></div>
@@ -64,38 +64,38 @@
 
         <!-- MYSQL TAB -->
         <div id="mysql" class="tab-content">
-            <h2>🗄️ MySQL Database Operations</h2>
+            <h2>MySQL Database Operations</h2>
             <div class="card-grid">
                 <div class="card">
-                    <h3>📊 Database Summary</h3>
+                    <h3>Database Summary</h3>
                     <p>MySQL database overview</p>
                     <button onclick="loadMySQLData('summary')">Load Summary</button>
                     <div id="mysql-summary" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>🔗 SQL Joins</h3>
+                    <h3>SQL Joins</h3>
                     <p>Demonstrate INNER JOIN operations</p>
                     <button onclick="loadMySQLData('joins')">Show Joins</button>
                     <div id="mysql-joins" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>⚡ Triggers</h3>
+                    <h3>Triggers</h3>
                     <p>AFTER INSERT, BEFORE UPDATE, AFTER DELETE</p>
                     <button onclick="loadMySQLData('triggers')">Show Triggers</button>
                     <div id="mysql-triggers" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>💾 Stored Procedures</h3>
+                    <h3>Stored Procedures</h3>
                     <p>With and without parameters</p>
                     <button onclick="loadMySQLData('stored-procedures')">Show Procedures</button>
                     <div id="mysql-stored-procedures" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>👤 User Management</h3>
+                    <h3>User Management</h3>
                     <p>Create users and assign privileges</p>
                     <button onclick="loadMySQLData('user-management')">User Management</button>
                     <div id="mysql-user-management" class="result"></div>
@@ -105,24 +105,24 @@
 
         <!-- REPORTS TAB -->
         <div id="reports" class="tab-content">
-            <h2>📈 Business Intelligence & Data Mining</h2>
+            <h2>Business Intelligence & Data Mining</h2>
             <div class="card-grid">
                 <div class="card">
-                    <h3>📊 Sales Analytics</h3>
+                    <h3>Sales Analytics</h3>
                     <p>Monthly sales trends and performance</p>
                     <button onclick="generateReport('sales')">Generate Report</button>
                     <div id="report-sales" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>🎯 Customer Segmentation</h3>
+                    <h3>Customer Segmentation</h3>
                     <p>Group customers by spending behavior</p>
                     <button onclick="generateReport('segmentation')">Segment Customers</button>
                     <div id="report-segmentation" class="result"></div>
                 </div>
 
                 <div class="card">
-                    <h3>🔄 Association Rules</h3>
+                    <h3>Association Rules</h3>
                     <p>Products frequently bought together</p>
                     <button onclick="generateReport('association')">Find Patterns</button>
                     <div id="report-association" class="result"></div>
@@ -132,13 +132,13 @@
 
         <!-- INTERACTIVE DEMO TAB -->
         <div id="interactive" class="tab-content">
-            <h2>🎮 Interactive Database Demo</h2>
+            <h2>Interactive Database Demo</h2>
             <p class="demo-description">Add real data to the database and see immediate results!</p>
             
             <div class="demo-grid">
                 <!-- ADD USER FORM -->
                 <div class="demo-card">
-                    <h3>👤 Add New User</h3>
+                    <h3>Add New User</h3>
                     <form id="addUserForm" onsubmit="addUser(event)">
                         <div class="form-group">
                             <label>Name:</label>
@@ -165,7 +165,7 @@
 
                 <!-- ADD PRODUCT FORM -->
                 <div class="demo-card">
-                    <h3>📦 Add New Product</h3>
+                    <h3>Add New Product</h3>
                     <form id="addProductForm" onsubmit="addProduct(event)">
                         <div class="form-group">
                             <label>Product Name:</label>
@@ -190,7 +190,7 @@
 
                 <!-- CREATE ORDER FORM -->
                 <div class="demo-card">
-                    <h3>🛒 Create New Order</h3>
+                    <h3>Create New Order</h3>
                     <form id="createOrderForm" onsubmit="createOrder(event)">
                         <div class="form-group">
                             <label>Customer Email:</label>
@@ -213,7 +213,7 @@
 
                 <!-- LIVE UPDATES CARD -->
                 <div class="demo-card live-updates">
-                    <h3>🔄 Live Updates</h3>
+                    <h3>Live Updates</h3>
                     <p>See real-time changes in the database</p>
                     <button onclick="refreshAllData()">Refresh All Data</button>
                     <div class="live-stats">
@@ -236,7 +236,7 @@
 
             <!-- QUICK ACTIONS -->
             <div class="quick-actions">
-                <h3>⚡ Quick Actions</h3>
+                <h3>Quick Actions</h3>
                 <div class="action-buttons">
                     <button onclick="addSampleData()">Add Sample Data</button>
                     <button onclick="clearAllForms()">Clear Forms</button>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL – E-Commerce System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>MySQL Database Operations</h1>
+</header>
+
+<div class="nav-links">
+   
+        <a href="mongodb.html">MongoDB (NoSQL)</a>
+        <a href="mysql.html">MySQL (Relational)</a>
+        <a href="reports.html">Business Reports</a>
+        <a href="interactive.html">Interactive Demo</a>
+
+</div>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Database Summary</h3>
+        <button onclick="loadMySQLData('summary')">Load Summary</button>
+        <div id="mysql-summary" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>SQL Joins</h3>
+        <button onclick="loadMySQLData('joins')">Show Joins</button>
+        <div id="mysql-joins" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>Triggers</h3>
+        <button onclick="loadMySQLData('triggers')">Show Triggers</button>
+        <div id="mysql-triggers" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>Stored Procedures</h3>
+        <button onclick="loadMySQLData('stored-procedures')">Show Procedures</button>
+        <div id="mysql-stored-procedures" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h3>User Management</h3>
+        <button onclick="loadMySQLData('user-management')">User Management</button>
+        <div id="mysql-user-management" class="result"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
