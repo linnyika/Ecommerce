@@ -1,251 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Commerce Management System</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cantora+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootswatch Flatly Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/flatly/bootstrap.min.css"
+    />
+
+    <!-- Your Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
     <div class="container">
-        <header>
-            <h1>E-Commerce Management System</h1>
-            <p>Advanced Database Systems Project - Interactive MongoDB & MySQL Demonstration</p>
-        </header>
+      <header>
+        <h1>E-Commerce Management System</h1>
+        <p>
+          Advanced Database Systems Project - Interactive MongoDB & MySQL
+          Demonstration
+        </p>
+      </header>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="showTab('mongodb')">MongoDB (NoSQL)</button>
-            <button class="tab-button" onclick="showTab('mysql')">MySQL (Relational)</button>
-            <button class="tab-button" onclick="showTab('reports')">Business Reports</button>
-            <button class="tab-button" onclick="showTab('interactive')">Interactive Demo</button>
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('mongodb')">
+          MongoDB (NoSQL)
+        </button>
+
+        <button class="tab-button" onclick="showTab('mysql')">
+          MySQL (Relational)
+        </button>
+
+        <button class="tab-button" onclick="showTab('reports')">
+          Business Reports
+        </button>
+
+        <button class="tab-button" onclick="showTab('interactive')">
+          Interactive Demo
+        </button>
+      </div>
+
+      <!-- MONGODB TAB -->
+      <div id="mongodb" class="tab-content active">
+        <h2>MongoDB Database Operations</h2>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Database Summary</h3>
+            <p>Show total users, products, orders and payments</p>
+            <button onclick="loadMongoDBData('summary')">Load Summary</button>
+            <div id="mongo-summary" class="result"></div>
+          </div>
+
+          <div class="card">
+            <h3>Sales Report</h3>
+            <p>Total revenue, orders and average order value</p>
+            <button onclick="loadMongoDBData('sales-report')">
+              Generate Report
+            </button>
+            <div id="mongo-sales" class="result"></div>
+          </div>
+
+          <div class="card">
+            <h3>Top Products</h3>
+            <p>Best selling products by quantity and revenue</p>
+            <button onclick="loadMongoDBData('top-products')">
+              Show Top Products
+            </button>
+            <div id="mongo-products" class="result"></div>
+          </div>
+
+          <div class="card">
+            <h3>Customer Analytics</h3>
+            <p>Customer spending patterns and order history</p>
+            <button onclick="loadMongoDBData('customer-summary')">
+              View Customers
+            </button>
+            <div id="mongo-customers" class="result"></div>
+          </div>
+
+          <div class="card">
+            <h3>Inventory Alerts</h3>
+            <p>Products with low stock levels</p>
+            <button onclick="loadMongoDBData('low-stock')">
+              Check Inventory
+            </button>
+            <div id="mongo-inventory" class="result"></div>
+          </div>
         </div>
+      </div>
 
-        <!-- MONGODB TAB -->
-        <div id="mongodb" class="tab-content active">
-            <h2>MongoDB Database Operations</h2>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Database Summary</h3>
-                    <p>Show total users, products, orders and payments</p>
-                    <button onclick="loadMongoDBData('summary')">Load Summary</button>
-                    <div id="mongo-summary" class="result"></div>
-                </div>
+      <!-- MYSQL TAB -->
+      <div id="mysql" class="tab-content">
+        <h2>MySQL Database Operations</h2>
 
-                <div class="card">
-                    <h3>Sales Report</h3>
-                    <p>Total revenue, orders and average order value</p>
-                    <button onclick="loadMongoDBData('sales-report')">Generate Report</button>
-                    <div id="mongo-sales" class="result"></div>
-                </div>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Database Summary</h3>
+            <p>MySQL database overview</p>
+            <button onclick="loadMySQLData('summary')">Load Summary</button>
+            <div id="mysql-summary" class="result"></div>
+          </div>
 
-                <div class="card">
-                    <h3>Top Products</h3>
-                    <p>Best selling products by quantity and revenue</p>
-                    <button onclick="loadMongoDBData('top-products')">Show Top Products</button>
-                    <div id="mongo-products" class="result"></div>
-                </div>
+          <div class="card">
+            <h3>SQL Joins</h3>
+            <p>Demonstrate INNER JOIN operations</p>
+            <button onclick="loadMySQLData('joins')">Show Joins</button>
+            <div id="mysql-joins" class="result"></div>
+          </div>
 
-                <div class="card">
-                    <h3>Customer Analytics</h3>
-                    <p>Customer spending patterns and order history</p>
-                    <button onclick="loadMongoDBData('customer-summary')">View Customers</button>
-                    <div id="mongo-customers" class="result"></div>
-                </div>
+          <div class="card">
+            <h3>Triggers</h3>
+            <p>AFTER INSERT, BEFORE UPDATE, AFTER DELETE</p>
+            <button onclick="loadMySQLData('triggers')">Show Triggers</button>
+            <div id="mysql-triggers" class="result"></div>
+          </div>
 
-                <div class="card">
-                    <h3>Inventory Alerts</h3>
-                    <p>Products with low stock levels</p>
-                    <button onclick="loadMongoDBData('low-stock')">Check Inventory</button>
-                    <div id="mongo-inventory" class="result"></div>
-                </div>
-            </div>
+          <div class="card">
+            <h3>Stored Procedures</h3>
+            <p>With and without parameters</p>
+            <button onclick="loadMySQLData('stored-procedures')">
+              Show Procedures
+            </button>
+            <div id="mysql-stored-procedures" class="result"></div>
+          </div>
+
+          <div class="card">
+            <h3>User Management</h3>
+            <p>Create users and assign privileges</p>
+            <button onclick="loadMySQLData('user-management')">
+              User Management
+            </button>
+            <div id="mysql-user-management" class="result"></div>
+          </div>
         </div>
+      </div>
 
-        <!-- MYSQL TAB -->
-        <div id="mysql" class="tab-content">
-            <h2>MySQL Database Operations</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Database Summary</h3>
-                    <p>MySQL database overview</p>
-                    <button onclick="loadMySQLData('summary')">Load Summary</button>
-                    <div id="mysql-summary" class="result"></div>
-                </div>
+      <!-- REPORTS TAB -->
+      <div id="reports" class="tab-content">
+        <h2>Business Intelligence & Data Mining</h2>
 
-                <div class="card">
-                    <h3>SQL Joins</h3>
-                    <p>Demonstrate INNER JOIN operations</p>
-                    <button onclick="loadMySQLData('joins')">Show Joins</button>
-                    <div id="mysql-joins" class="result"></div>
-                </div>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Sales Analytics</h3>
+            <p>Monthly sales trends and performance</p>
+            <button onclick="generateReport('sales')">Generate Report</button>
+            <div id="report-sales" class="result"></div>
+          </div>
 
-                <div class="card">
-                    <h3>Triggers</h3>
-                    <p>AFTER INSERT, BEFORE UPDATE, AFTER DELETE</p>
-                    <button onclick="loadMySQLData('triggers')">Show Triggers</button>
-                    <div id="mysql-triggers" class="result"></div>
-                </div>
+          <div class="card">
+            <h3>Customer Segmentation</h3>
+            <p>Group customers by spending behavior</p>
+            <button onclick="generateReport('segmentation')">
+              Segment Customers
+            </button>
+            <div id="report-segmentation" class="result"></div>
+          </div>
 
-                <div class="card">
-                    <h3>Stored Procedures</h3>
-                    <p>With and without parameters</p>
-                    <button onclick="loadMySQLData('stored-procedures')">Show Procedures</button>
-                    <div id="mysql-stored-procedures" class="result"></div>
-                </div>
-
-                <div class="card">
-                    <h3>User Management</h3>
-                    <p>Create users and assign privileges</p>
-                    <button onclick="loadMySQLData('user-management')">User Management</button>
-                    <div id="mysql-user-management" class="result"></div>
-                </div>
-            </div>
+          <div class="card">
+            <h3>Association Rules</h3>
+            <p>Products frequently bought together</p>
+            <button onclick="generateReport('association')">
+              Find Patterns
+            </button>
+            <div id="report-association" class="result"></div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- REPORTS TAB -->
-        <div id="reports" class="tab-content">
-            <h2>Business Intelligence & Data Mining</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Sales Analytics</h3>
-                    <p>Monthly sales trends and performance</p>
-                    <button onclick="generateReport('sales')">Generate Report</button>
-                    <div id="report-sales" class="result"></div>
-                </div>
+    <!-- INTERACTIVE DEMO TAB -->
+    <div id="interactive" class="tab-content">
+      <h2>Interactive Database Demo</h2>
+      <p class="demo-description">
+        Add real data to the database and see immediate results!
+      </p>
 
-                <div class="card">
-                    <h3>Customer Segmentation</h3>
-                    <p>Group customers by spending behavior</p>
-                    <button onclick="generateReport('segmentation')">Segment Customers</button>
-                    <div id="report-segmentation" class="result"></div>
-                </div>
+      <div class="demo-grid">
+        <!-- ADD USER FORM -->
+        <div class="demo-card">
+          <h3>Add New User</h3>
 
-                <div class="card">
-                    <h3>Association Rules</h3>
-                    <p>Products frequently bought together</p>
-                    <button onclick="generateReport('association')">Find Patterns</button>
-                    <div id="report-association" class="result"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- INTERACTIVE DEMO TAB -->
-        <div id="interactive" class="tab-content">
-            <h2>Interactive Database Demo</h2>
-            <p class="demo-description">Add real data to the database and see immediate results!</p>
-            
-            <div class="demo-grid">
-                <!-- ADD USER FORM -->
-                <div class="demo-card">
-                    <h3>Add New User</h3>
-                    <form id="addUserForm" onsubmit="addUser(event)">
-                        <div class="form-group">
-                            <label>Name:</label>
-                            <input type="text" name="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email:</label>
-                            <input type="email" name="email" placeholder="john@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Role:</label>
-                            <select name="role" required>
-                                <option value="customer">Customer</option>
-                                <option value="seller">Seller</option>
-                                <option value="admin">Admin</option>
-                                <option value="delivery">Delivery</option>
-                                <option value="accountant">Accountant</option>
-                            </select>
-                        </div>
-                        <button type="submit">Add User</button>
-                    </form>
-                    <div id="user-result" class="result"></div>
-                </div>
-
-                <!-- ADD PRODUCT FORM -->
-                <div class="demo-card">
-                    <h3>Add New Product</h3>
-                    <form id="addProductForm" onsubmit="addProduct(event)">
-                        <div class="form-group">
-                            <label>Product Name:</label>
-                            <input type="text" name="name" placeholder="Wireless Headphones" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description:</label>
-                            <textarea name="description" placeholder="Product description..." required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Price ($):</label>
-                            <input type="number" name="price" step="0.01" placeholder="99.99" required>
-                        </div>
-                        <div class="form-group">
-                            <label>SKU:</label>
-                            <input type="text" name="sku" placeholder="HD-002" required>
-                        </div>
-                        <button type="submit">Add Product</button>
-                    </form>
-                    <div id="product-result" class="result"></div>
-                </div>
-
-                <!-- CREATE ORDER FORM -->
-                <div class="demo-card">
-                    <h3>Create New Order</h3>
-                    <form id="createOrderForm" onsubmit="createOrder(event)">
-                        <div class="form-group">
-                            <label>Customer Email:</label>
-                            <input type="email" name="customerEmail" placeholder="bob@customers.com" required>
-                            <small>Try: bob@customers.com or add new customer first</small>
-                        </div>
-                        <div class="form-group">
-                            <label>Products (SKUs):</label>
-                            <div class="product-selection">
-                                <label><input type="checkbox" name="products" value="LAP-001"> Laptop Pro 14</label>
-                                <label><input type="checkbox" name="products" value="PHN-001"> Smartphone</label>
-                                <label><input type="checkbox" name="products" value="BOK-001"> Programming Book</label>
-                            </div>
-                            <small>Select products to add to order</small>
-                        </div>
-                        <button type="submit">Create Order</button>
-                    </form>
-                    <div id="order-result" class="result"></div>
-                </div>
-
-                <!-- LIVE UPDATES CARD -->
-                <div class="demo-card live-updates">
-                    <h3>Live Updates</h3>
-                    <p>See real-time changes in the database</p>
-                    <button onclick="refreshAllData()">Refresh All Data</button>
-                    <div class="live-stats">
-                        <div class="stat">
-                            <span class="stat-number" id="live-users">0</span>
-                            <span class="stat-label">Users</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="live-products">0</span>
-                            <span class="stat-label">Products</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="live-orders">0</span>
-                            <span class="stat-label">Orders</span>
-                        </div>
-                    </div>
-                    <div id="live-updates" class="result"></div>
-                </div>
+          <form id="addUserForm" onsubmit="addUser(event)">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" name="name" placeholder="John Doe" required />
             </div>
 
-            <!-- QUICK ACTIONS -->
-            <div class="quick-actions">
-                <h3>Quick Actions</h3>
-                <div class="action-buttons">
-                    <button onclick="addSampleData()">Add Sample Data</button>
-                    <button onclick="clearAllForms()">Clear Forms</button>
-                    <button onclick="testAllFeatures()">Test All Features</button>
-                </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+              />
             </div>
+
+            <div class="form-group">
+              <label>Role:</label>
+              <select name="role" required>
+                <option value="customer">Customer</option>
+                <option value="seller">Seller</option>
+                <option value="admin">Admin</option>
+                <option value="delivery">Delivery</option>
+                <option value="accountant">Accountant</option>
+              </select>
+            </div>
+
+            <button type="submit">Add User</button>
+          </form>
+
+          <div id="user-result" class="result"></div>
         </div>
+
+        <!-- ADD PRODUCT FORM -->
+        <div class="demo-card">
+          <h3>Add New Product</h3>
+
+          <form id="addProductForm" onsubmit="addProduct(event)">
+            <div class="form-group">
+              <label>Product Name:</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Wireless Headphones"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Description:</label>
+              <textarea
+                name="description"
+                placeholder="Product description..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Price ($):</label>
+              <input
+                type="number"
+                name="price"
+                step="0.01"
+                placeholder="99.99"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>SKU:</label>
+              <input type="text" name="sku" placeholder="HD-002" required />
+            </div>
+
+            <button type="submit">Add Product</button>
+          </form>
+
+          <div id="product-result" class="result"></div>
+        </div>
+
+        <!-- CREATE ORDER FORM -->
+        <div class="demo-card">
+          <h3>Create New Order</h3>
+
+          <form id="createOrderForm" onsubmit="createOrder(event)">
+            <div class="form-group">
+              <label>Customer Email:</label>
+              <input
+                type="email"
+                name="customerEmail"
+                placeholder="bob@customers.com"
+                required
+              />
+              <small>Try: bob@customers.com or add new customer first</small>
+            </div>
+
+            <div class="form-group">
+              <label>Products (SKUs):</label>
+
+              <div class="product-selection">
+                <label
+                  ><input type="checkbox" name="products" value="LAP-001" />
+                  Laptop Pro 14</label
+                >
+                <label
+                  ><input type="checkbox" name="products" value="PHN-001" />
+                  Smartphone</label
+                >
+                <label
+                  ><input type="checkbox" name="products" value="BOK-001" />
+                  Programming Book</label
+                >
+              </div>
+
+              <small>Select products to add to order</small>
+            </div>
+
+            <button type="submit">Create Order</button>
+          </form>
+
+          <div id="order-result" class="result"></div>
+        </div>
+
+        <!-- LIVE UPDATES -->
+        <div class="demo-card live-updates">
+          <h3>Live Updates</h3>
+
+          <p>See real-time changes in the database</p>
+
+          <button onclick="refreshAllData()">Refresh All Data</button>
+
+          <div class="live-stats">
+            <div class="stat">
+              <span class="stat-number" id="live-users">0</span>
+              <span class="stat-label">Users</span>
+            </div>
+
+            <div class="stat">
+              <span class="stat-number" id="live-products">0</span>
+              <span class="stat-label">Products</span>
+            </div>
+
+            <div class="stat">
+              <span class="stat-number" id="live-orders">0</span>
+              <span class="stat-label">Orders</span>
+            </div>
+          </div>
+
+          <div id="live-updates" class="result"></div>
+        </div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+
+        <div class="action-buttons">
+          <button onclick="addSampleData()">Add Sample Data</button>
+          <button onclick="clearAllForms()">Clear Forms</button>
+          <button onclick="testAllFeatures()">Test All Features</button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
